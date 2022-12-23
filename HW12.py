@@ -117,7 +117,7 @@ with open('results.csv', mode='r') as file_1, open('high_scores.csv', mode='w') 
 
     index = [99, 199, 299, 399, 499]
     high_score = sorted([x for x in sorted_list if sorted_list.index(x) in index], key=lambda row: (int(row[1])), reverse=True)
-    print(high_score)
+
     writer.writerow(['Player name', 'Highest score'])
     for score in high_score:
         writer.writerow(score)
