@@ -122,5 +122,26 @@ with open('results.csv', mode='r') as file_1, open('high_scores.csv', mode='w') 
     for score in high_score:
         writer.writerow(score)
 
-# Task 4. Считать файл hw.csv и посчитать средний рост, средний вес
-#  в см и кг соответственно
+# Task 4. Зчитати файл hw.csv та порахувати середній зріст, вагу
+#  в см і кг
+'''
+ reader = csv.DictReader(file)
+    print(reader.line_num)
+ for row in reader:
+        height = row['Height(Inches)']
+        if height != None and height != "--":
+            height_list.append(float(row['Height(Inches)']))
+'''
+
+height_list = []
+weight_list = []
+with open('hw (2) (1).csv', mode='r') as file:
+    reader = csv.DictReader(file, delimiter=',')
+    for row in reader:
+        height_list.append(float(row[' "Height(Inches)"']))
+        weight_list.append(float(row[' "Weight(Pounds)"']))
+        # print(row.keys())
+
+avg_height = (sum(height_list) / len(height_list)) * 2.54
+avg_weight = (sum(weight_list) / len(weight_list)) / 2.2046
+print('avg of hight: ', avg_height, 'cm', '\navg of hight: ', avg_weight, 'kg')
