@@ -24,11 +24,11 @@ def check_types(func):
 
 
 @check_types
-def add(a: int, b: int) -> int:
-    return a + b
+def add(a: int, b: int, c: int) -> int:
+    return a + b + c
 
 
-print(add(1, '2'))
+print(add(1, '2', '8'))
 
 # Write a decorator that will calculate the execution
 # time of a function.
